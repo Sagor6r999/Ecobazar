@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <link rel="shortcut icon" href="./assets/image/SCR-20260811-uqsr-3.png" type="image/x-icon">
+    <title>Ecobazar - Organic & Healthy Food</title>
+</head>
+
+<body class="w-full max-w-[1920px] mx-auto text-gray-800 antialiased selection:bg-emerald-500 selection:text-white overflow-x-hidden">
+    <div class="min-h-screen flex flex-col">
+        
+        <!-- HEADER START -->
+        <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-xs">
+            <div class="bg-gray-100 py-2 border-b border-gray-200 text-xs sm:text-sm">
+                <div class="container mx-auto px-4 md:px-12 flex justify-between items-center">
+                    <div class="flex items-center gap-2 text-gray-600 truncate max-w-[250px] sm:max-w-none">
+                        <i class="fa-solid fa-location-dot text-emerald-600 shrink-0"></i>
+                        <p class="truncate">Store Location: Lincoln- 344, Illinois, Chicago, USA</p>
+                    </div>
+                    <div class="flex gap-3 sm:gap-4 text-gray-600 shrink-0">
+                        <div class="hover:text-emerald-600 cursor-pointer transition-colors">Eng</div>
+                        <div class="border-l border-gray-300 pl-3 sm:pl-4 hover:text-emerald-600 cursor-pointer transition-colors">USD</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Nav -->
+            <div class="border-b border-gray-200 py-3 sm:py-4">
+                <div class="container mx-auto px-4 md:px-12 flex items-center justify-between">
+                    
+                    <!-- Mobile Menu Hamburger Button -->
+                    <button id="menu-btn" aria-label="Open Menu" class="lg:hidden p-2 text-gray-700 hover:text-emerald-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center gap-2 transition-transform hover:scale-105">
+                        <img src="./assets/image/Logo.png" alt="Ecobazar Logo" class="h-7 sm:h-9 md:h-10">
+                    </a>
+
+                    <!-- Desktop Nav Links -->
+                    <nav class="hidden lg:block">
+                        <ul class="flex gap-8 font-medium text-gray-700">
+                            <li><a href="#" class="hover:text-emerald-600 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-600 hover:after:w-full after:transition-all">Home</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-600 hover:after:w-full after:transition-all">Shop</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-600 hover:after:w-full after:transition-all">Pages</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-600 hover:after:w-full after:transition-all">Blog</a></li>
+                            <li><a href="#" class="hover:text-emerald-600 transition-colors py-2 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-600 hover:after:w-full after:transition-all">About us</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Nav Icons -->
+                    <div class="flex gap-1 sm:gap-3 items-center">
+                        <button aria-label="Search" class="p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-all">
+                            <i class="fa-solid fa-magnifying-glass text-lg sm:text-xl"></i>
+                        </button>
+                        <a href="#" aria-label="Wishlist" class="p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-all relative">
+                            <i class="fa-regular fa-heart text-lg sm:text-xl"></i>
+                            <span class="absolute top-0 right-0 sm:top-1 sm:right-1 bg-emerald-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+                        </a>
+                        <a href="#" aria-label="Cart" class="p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-all relative">
+                            <i class="fa-solid fa-bag-shopping text-lg sm:text-xl"></i>
+                            <span class="absolute top-0 right-0 sm:top-1 sm:right-1 bg-emerald-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+                        </a>
+                        <a href="#" aria-label="Profile" class="hidden sm:flex p-2 text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-full transition-all">
+                            <i class="fa-regular fa-user text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-50 hidden opacity-0 transition-opacity duration-300"></div>
+        <aside id="mobile-menu" class="fixed top-0 left-0 w-4/5 max-w-xs h-full bg-white z-50 -translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col justify-between">
+            <div>
+                <div class="p-4 border-b border-gray-100 flex items-center justify-between">
+                    <img src="./assets/image/Logo.png" alt="Ecobazar Logo" class="h-8">
+                    <button id="close-menu-btn" aria-label="Close Menu" class="p-2 text-gray-500 hover:text-red-500">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="p-4">
+                    <ul class="flex flex-col gap-4 font-semibold text-gray-800 text-lg">
+                        <li><a href="#" class="block py-2 text-emerald-600 border-b border-gray-50">Home</a></li>
+                        <li><a href="#" class="block py-2 hover:text-emerald-600 border-b border-gray-50 transition-colors">Shop</a></li>
+                        <li><a href="#" class="block py-2 hover:text-emerald-600 border-b border-gray-50 transition-colors">Pages</a></li>
+                        <li><a href="#" class="block py-2 hover:text-emerald-600 border-b border-gray-50 transition-colors">Blog</a></li>
+                        <li><a href="#" class="block py-2 hover:text-emerald-600 border-b border-gray-50 transition-colors">About Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="p-4 bg-gray-50 border-t border-gray-100">
+                <a href="#" class="flex items-center gap-3 text-gray-700 font-medium p-2">
+                    <i class="fa-regular fa-user text-xl text-emerald-600"></i> My Account
+                </a>
+            </div>
+        </aside>
+        <!-- HEADER END -->
+
+        <main class="flex-1">
+            <!-- Hero Section Start -->
+            <section class="relative bg-gradient-to-r from-gray-900/70 via-gray-900/40 to-transparent bg-cover bg-center bg-no-repeat w-full min-h-[500px] sm:min-h-[600px] lg:h-[700px] flex items-center py-12" style="background-image: url('./assets/image/BG.png');">
+                <div class="container mx-auto px-4 md:px-12 flex justify-center lg:justify-end">
+                    <div class="w-full sm:max-w-lg lg:max-w-xl bg-white/95 backdrop-blur-md p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 transform transition-all hover:shadow-emerald-900/10 text-center sm:text-left">
+                        <p class="text-emerald-600 font-semibold uppercase text-xs sm:text-sm tracking-wider mb-2">Welcome to shopery</p>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 text-gray-900 leading-tight">
+                            Fresh & Healthy <br><span class="text-emerald-600">Organic Food</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl text-gray-700 font-medium">
+                            Sale Up to <span class="font-bold text-amber-500 bg-amber-50 px-2 py-0.5 sm:py-1 rounded-md">48% OFF</span>
+                        </p>
+                        <p class="text-gray-500 text-xs sm:text-sm my-3 sm:my-4">Free shipping on all your order. We deliver, you enjoy.</p>
+
+                        <div class="flex justify-center sm:justify-start">
+                            <button class="group bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-emerald-600/30 transition-all duration-300 flex items-center gap-3 active:scale-95 text-sm sm:text-base">
+                                Shop Now
+                                <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Hero Section End -->
+
+            <!-- Featured Values Section Start -->
+            <section class="py-8 sm:py-12 bg-white border-b border-gray-100">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
+                        <div class="group p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-emerald-50/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 group-hover:bg-emerald-600 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300 shrink-0">
+                                <i class="fa-solid fa-truck text-emerald-600 group-hover:text-white text-xl sm:text-2xl transition-colors"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 text-xs sm:text-base mb-1">Free Shipping</h4>
+                            <p class="text-gray-500 text-[11px] sm:text-sm">Free shipping on all orders</p>
+                        </div>
+                        <div class="group p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-emerald-50/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 group-hover:bg-emerald-600 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300 shrink-0">
+                                <i class="fa-solid fa-headset text-emerald-600 group-hover:text-white text-xl sm:text-2xl transition-colors"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 text-xs sm:text-base mb-1">Support 24/7</h4>
+                            <p class="text-gray-500 text-[11px] sm:text-sm">Instant access to support</p>
+                        </div>
+                        <div class="group p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-emerald-50/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 group-hover:bg-emerald-600 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300 shrink-0">
+                                <i class="fa-solid fa-shield-halved text-emerald-600 group-hover:text-white text-xl sm:text-2xl transition-colors"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 text-xs sm:text-base mb-1">100% Secure</h4>
+                            <p class="text-gray-500 text-[11px] sm:text-sm">We keep your money safe</p>
+                        </div>
+                        <div class="group p-4 sm:p-6 rounded-2xl bg-gray-50 hover:bg-emerald-50/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
+                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-emerald-100 group-hover:bg-emerald-600 rounded-full flex items-center justify-center mb-3 sm:mb-4 transition-colors duration-300 shrink-0">
+                                <i class="fa-solid fa-box-archive text-emerald-600 group-hover:text-white text-xl sm:text-2xl transition-colors"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 text-xs sm:text-base mb-1">Money-Back</h4>
+                            <p class="text-gray-500 text-[11px] sm:text-sm">30 days money-back</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Featured Values Section End-->
+
+            <!-- Featured Products Section Start-->
+            <section class="py-10 sm:py-16">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="flex justify-between items-end mb-6 sm:mb-8">
+                        <div>
+                            <span class="text-emerald-600 font-semibold uppercase text-xs tracking-wider">Products</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Featured Products</h2>
+                        </div>
+                        <a href="#" class="group text-emerald-600 font-semibold text-sm sm:text-base hover:text-emerald-700 flex items-center gap-1.5 transition-colors">
+                            View All <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+                        <!-- Product Card Item -->
+                        <div class="group border border-gray-200 rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:border-emerald-500 hover:shadow-xl bg-white relative overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <div class="overflow-hidden rounded-xl mb-3 bg-gray-50 flex items-center justify-center h-36 sm:h-48">
+                                    <img src="./assets/image/Product Image (1).png" alt="Green Capsicum" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <p class="text-xs sm:text-sm text-gray-600 font-medium line-clamp-1">Green Capsicum</p>
+                                <h3 class="text-base sm:text-lg font-bold text-gray-900">$14.99 <del class="text-xs sm:text-sm font-normal text-gray-400 ml-1">$20.99</del></h3>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <button aria-label="Add to cart" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-emerald-600 text-gray-700 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm shrink-0">
+                                    <i class="fa-solid fa-cart-shopping text-xs sm:text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="group border border-gray-200 rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:border-emerald-500 hover:shadow-xl bg-white relative overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <div class="overflow-hidden rounded-xl mb-3 bg-gray-50 flex items-center justify-center h-36 sm:h-48">
+                                    <img src="./assets/image/Product Image (1).png" alt="Green Capsicum" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <p class="text-xs sm:text-sm text-gray-600 font-medium line-clamp-1">Green Capsicum</p>
+                                <h3 class="text-base sm:text-lg font-bold text-gray-900">$14.99 <del class="text-xs sm:text-sm font-normal text-gray-400 ml-1">$20.99</del></h3>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <button aria-label="Add to cart" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-emerald-600 text-gray-700 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm shrink-0">
+                                    <i class="fa-solid fa-cart-shopping text-xs sm:text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="group border border-gray-200 rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:border-emerald-500 hover:shadow-xl bg-white relative overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <div class="overflow-hidden rounded-xl mb-3 bg-gray-50 flex items-center justify-center h-36 sm:h-48">
+                                    <img src="./assets/image/Product Image (1).png" alt="Green Capsicum" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <p class="text-xs sm:text-sm text-gray-600 font-medium line-clamp-1">Green Capsicum</p>
+                                <h3 class="text-base sm:text-lg font-bold text-gray-900">$14.99 <del class="text-xs sm:text-sm font-normal text-gray-400 ml-1">$20.99</del></h3>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <button aria-label="Add to cart" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-emerald-600 text-gray-700 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm shrink-0">
+                                    <i class="fa-solid fa-cart-shopping text-xs sm:text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="group border border-gray-200 rounded-2xl p-3 sm:p-4 transition-all duration-300 hover:border-emerald-500 hover:shadow-xl bg-white relative overflow-hidden flex flex-col justify-between">
+                            <div>
+                                <div class="overflow-hidden rounded-xl mb-3 bg-gray-50 flex items-center justify-center h-36 sm:h-48">
+                                    <img src="./assets/image/Product Image (1).png" alt="Green Capsicum" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-110">
+                                </div>
+                                <p class="text-xs sm:text-sm text-gray-600 font-medium line-clamp-1">Green Capsicum</p>
+                                <h3 class="text-base sm:text-lg font-bold text-gray-900">$14.99 <del class="text-xs sm:text-sm font-normal text-gray-400 ml-1">$20.99</del></h3>
+                            </div>
+                            <div class="flex items-center justify-between mt-2 pt-2 border-t border-gray-50">
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <button aria-label="Add to cart" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 hover:bg-emerald-600 text-gray-700 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm shrink-0">
+                                    <i class="fa-solid fa-cart-shopping text-xs sm:text-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Featured Products Section End-->
+
+            <!-- Shop Category Section start -->
+            <section class="py-10 sm:py-16 bg-gradient-to-b from-gray-50 to-white">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="flex justify-between items-end mb-6 sm:mb-8">
+                        <div>
+                            <span class="text-emerald-600 font-semibold uppercase text-xs tracking-wider">Categories</span>
+                            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Shop by Top Categories</h2>
+                        </div>
+                        <a href="#" class="group text-emerald-600 font-semibold text-sm sm:text-base hover:text-emerald-700 flex items-center gap-1.5 transition-colors">
+                            View All <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Touch-friendly Horizontal Scroll Slider for Mobile & Grid for Tablet/Desktop -->
+                    <div class="flex sm:grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4">
+                        <div class="snap-start shrink-0 w-36 sm:w-auto group border border-gray-200 hover:border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white hover:shadow-xl transition-all duration-300 text-center cursor-pointer">
+                            <img src="./assets/image/Vegetable.png" alt="Vegetables" class="w-14 h-14 sm:w-20 sm:h-20 object-contain mx-auto mb-3 transition-transform duration-300 group-hover:scale-110">
+                            <h3 class="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-emerald-600 transition-colors">Vegetables</h3>
+                            <p class="text-[11px] sm:text-xs text-gray-500 mt-1">165 Products</p>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-36 sm:w-auto group border border-gray-200 hover:border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white hover:shadow-xl transition-all duration-300 text-center cursor-pointer">
+                            <img src="./assets/image/Vegetable.png" alt="Fresh Fruits" class="w-14 h-14 sm:w-20 sm:h-20 object-contain mx-auto mb-3 transition-transform duration-300 group-hover:scale-110">
+                            <h3 class="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-emerald-600 transition-colors">Fresh Fruits</h3>
+                            <p class="text-[11px] sm:text-xs text-gray-500 mt-1">120 Products</p>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-36 sm:w-auto group border border-gray-200 hover:border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white hover:shadow-xl transition-all duration-300 text-center cursor-pointer">
+                            <img src="./assets/image/Vegetable.png" alt="River Fish" class="w-14 h-14 sm:w-20 sm:h-20 object-contain mx-auto mb-3 transition-transform duration-300 group-hover:scale-110">
+                            <h3 class="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-emerald-600 transition-colors">River Fish</h3>
+                            <p class="text-[11px] sm:text-xs text-gray-500 mt-1">85 Products</p>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-36 sm:w-auto group border border-gray-200 hover:border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white hover:shadow-xl transition-all duration-300 text-center cursor-pointer">
+                            <img src="./assets/image/Vegetable.png" alt="Meat & Organic" class="w-14 h-14 sm:w-20 sm:h-20 object-contain mx-auto mb-3 transition-transform duration-300 group-hover:scale-110">
+                            <h3 class="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-emerald-600 transition-colors">Meat & Organic</h3>
+                            <p class="text-[11px] sm:text-xs text-gray-500 mt-1">90 Products</p>
+                        </div>
+
+                        <div class="snap-start shrink-0 w-36 sm:w-auto group border border-gray-200 hover:border-emerald-500 rounded-2xl p-4 sm:p-6 bg-white hover:shadow-xl transition-all duration-300 text-center cursor-pointer">
+                            <img src="./assets/image/Vegetable.png" alt="Water & Drinks" class="w-14 h-14 sm:w-20 sm:h-20 object-contain mx-auto mb-3 transition-transform duration-300 group-hover:scale-110">
+                            <h3 class="font-semibold text-sm sm:text-base text-gray-900 group-hover:text-emerald-600 transition-colors">Water & Drinks</h3>
+                            <p class="text-[11px] sm:text-xs text-gray-500 mt-1">48 Products</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Shop Category Section End -->
+
+            <!-- Why Choose Us Section Start -->
+            <section class="py-12 sm:py-20 bg-white">
+                <div class="container mx-auto px-4 md:px-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+                    <!-- Responsive Image Layout -->
+                    <div class="w-full lg:w-1/2 flex gap-3 sm:gap-4">
+                        <img class="w-1/2 h-52 sm:h-80 md:h-[420px] object-cover rounded-2xl sm:rounded-3xl shadow-lg" src="./assets/image/choose-1.jpg" alt="Organic Farm">
+                        <img class="w-1/2 h-56 sm:h-88 md:h-[460px] object-cover rounded-2xl sm:rounded-3xl shadow-xl mt-4 sm:mt-6" src="./assets/image/choose-2.jpg" alt="Organic Products">
+                    </div>
+
+                    <div class="w-full lg:w-1/2 max-w-xl text-center lg:text-left">
+                        <span class="text-emerald-600 font-semibold uppercase text-xs tracking-wider">About Us</span>
+                        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 my-3 sm:my-4 leading-tight">100% Trusted <br class="hidden sm:inline">Organic Food Store</h2>
+
+                        <div class="space-y-4 sm:space-y-6 my-6 text-left">
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="text-emerald-600 fa-solid fa-check text-xs sm:text-sm"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-sm sm:text-lg">Healthy & natural food for lovers of healthy food.</h3>
+                                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Ut quis tempus erat. Phasellus euismod bibendum magna non tristique. Pellentesque semper vestibulum elit.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 sm:gap-4 items-start">
+                                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-1">
+                                    <i class="text-emerald-600 fa-solid fa-check text-xs sm:text-sm"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-gray-900 text-sm sm:text-lg">Every day fresh and quality products directly from farms.</h3>
+                                    <p class="text-xs sm:text-sm text-gray-500 mt-1">Nunc pretium fermentum interdum. Ut quis tempus erat. Phasellus euismod bibendum magna non tristique.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="#" class="group bg-emerald-600 hover:bg-emerald-700 text-white font-semibold inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full shadow-lg transition-all duration-300 active:scale-95 text-sm sm:text-base">
+                                Shop Now
+                                <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Why Choose Us Section End -->
+
+            <!-- Service Stats Section Start -->
+            <section class="bg-gray-900 py-12 sm:py-16 text-white relative overflow-hidden">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+                        <div class="p-4 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-all">
+                            <h3 class="text-emerald-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-1">37+</h3>
+                            <p class="text-gray-300 font-medium text-xs sm:text-base">Years of Hard Work</p>
+                        </div>
+                        <div class="p-4 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-all">
+                            <h3 class="text-emerald-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-1">500k+</h3>
+                            <p class="text-gray-300 font-medium text-xs sm:text-base">Happy Customers</p>
+                        </div>
+                        <div class="p-4 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-all">
+                            <h3 class="text-emerald-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-1">28</h3>
+                            <p class="text-gray-300 font-medium text-xs sm:text-base">Team Members</p>
+                        </div>
+                        <div class="p-4 sm:p-6 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-all">
+                            <h3 class="text-emerald-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-1">750k+</h3>
+                            <p class="text-gray-300 font-medium text-xs sm:text-base">Monthly Orders</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Service Stats Section End -->
+
+            <!-- Banner Section Start -->
+            <section class="py-10 sm:py-16">
+                <div class="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                    <!-- Banner 1 -->
+                    <div class="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg h-[280px] sm:h-[360px]">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="./assets/image/banner-1.jpg" alt="Organic Banner">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex flex-col justify-center p-6 sm:p-12 text-white">
+                            <span class="text-[10px] sm:text-xs uppercase font-semibold tracking-wider text-emerald-400 mb-1">100% Organic</span>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">Fruit & Vegetable</h3>
+                            <p class="text-xs sm:text-sm text-gray-200 mb-4 sm:mb-6">Starting at <span class="bg-amber-500 text-white font-bold px-2 py-0.5 rounded-md">$11.99</span></p>
+                            <div>
+                                <a href="#" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Banner 2 -->
+                    <div class="group relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg h-[280px] sm:h-[360px]">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="./assets/image/banner-2.jpg" alt="Sale Banner">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent flex flex-col justify-center p-6 sm:p-12 text-white">
+                            <span class="text-[10px] sm:text-xs uppercase font-semibold tracking-wider text-emerald-400 mb-1">Sale of the Week</span>
+                            <h3 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Sales of the Year</h3>
+
+                            <div class="flex gap-2 sm:gap-3 text-center mb-4 sm:mb-6">
+                                <div class="bg-white/20 backdrop-blur-md rounded-lg p-1.5 sm:p-2 min-w-[40px] sm:min-w-[50px]">
+                                    <span class="block text-sm sm:text-xl font-bold">00</span>
+                                    <span class="text-[8px] sm:text-[10px] uppercase tracking-wider text-gray-300">Days</span>
+                                </div>
+                                <span class="text-lg sm:text-2xl font-bold self-center">:</span>
+                                <div class="bg-white/20 backdrop-blur-md rounded-lg p-1.5 sm:p-2 min-w-[40px] sm:min-w-[50px]">
+                                    <span class="block text-sm sm:text-xl font-bold">02</span>
+                                    <span class="text-[8px] sm:text-[10px] uppercase tracking-wider text-gray-300">Hours</span>
+                                </div>
+                                <span class="text-lg sm:text-2xl font-bold self-center">:</span>
+                                <div class="bg-white/20 backdrop-blur-md rounded-lg p-1.5 sm:p-2 min-w-[40px] sm:min-w-[50px]">
+                                    <span class="block text-sm sm:text-xl font-bold">18</span>
+                                    <span class="text-[8px] sm:text-[10px] uppercase tracking-wider text-gray-300">Mins</span>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-5 sm:px-6 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all shadow-md active:scale-95">
+                                    Shop Now <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Banner Section End -->
+
+            <!-- Latest News Section Start -->
+            <section class="py-10 sm:py-16 bg-gray-50">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+                        <span class="text-emerald-600 font-semibold uppercase text-xs tracking-wider">Blog</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">Latest News & Insights</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                            <div class="overflow-hidden h-48 sm:h-56">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/image/news-1.jpg" alt="News Image">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-3">
+                                    <span><i class="fa-solid fa-tag text-emerald-600 mr-1"></i> Food</span>
+                                    <span><i class="fa-solid fa-user text-emerald-600 mr-1"></i> By Admin</span>
+                                    <span><i class="fa-regular fa-comment text-emerald-600 mr-1"></i> 65</span>
+                                </div>
+                                <h3 class="font-bold text-base sm:text-lg text-gray-900 group-hover:text-emerald-600 transition-colors mb-3 line-clamp-2">
+                                    Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.
+                                </h3>
+                                <a href="#" class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
+                                    Read More <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                            <div class="overflow-hidden h-48 sm:h-56">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/image/news-1.jpg" alt="News Image">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-3">
+                                    <span><i class="fa-solid fa-tag text-emerald-600 mr-1"></i> Food</span>
+                                    <span><i class="fa-solid fa-user text-emerald-600 mr-1"></i> By Admin</span>
+                                    <span><i class="fa-regular fa-comment text-emerald-600 mr-1"></i> 65</span>
+                                </div>
+                                <h3 class="font-bold text-base sm:text-lg text-gray-900 group-hover:text-emerald-600 transition-colors mb-3 line-clamp-2">
+                                    Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.
+                                </h3>
+                                <a href="#" class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
+                                    Read More <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                            <div class="overflow-hidden h-48 sm:h-56">
+                                <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="./assets/image/news-1.jpg" alt="News Image">
+                            </div>
+                            <div class="p-5 sm:p-6">
+                                <div class="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-3">
+                                    <span><i class="fa-solid fa-tag text-emerald-600 mr-1"></i> Food</span>
+                                    <span><i class="fa-solid fa-user text-emerald-600 mr-1"></i> By Admin</span>
+                                    <span><i class="fa-regular fa-comment text-emerald-600 mr-1"></i> 65</span>
+                                </div>
+                                <h3 class="font-bold text-base sm:text-lg text-gray-900 group-hover:text-emerald-600 transition-colors mb-3 line-clamp-2">
+                                    Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.
+                                </h3>
+                                <a href="#" class="inline-flex items-center gap-2 text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors">
+                                    Read More <i class="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Latest News Section End -->
+
+            <!-- Client Feedback Section Start-->
+            <section class="py-10 sm:py-16 bg-white">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="text-center max-w-xl mx-auto mb-8 sm:mb-12">
+                        <span class="text-emerald-600 font-semibold uppercase text-xs tracking-wider">Testimonial</span>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mt-1">What Our Clients Say</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                        <div class="p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-2xl sm:text-3xl text-emerald-600/30 mb-3 block"></i>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                                    Pellentesque eu nibh eget mauris congue mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-gray-200/60 pt-4">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" src="./assets/image/person-1.jpg" alt="Robert Fox">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm">Robert Fox</h4>
+                                        <p class="text-gray-400 text-[10px] sm:text-xs">Customer</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-2xl sm:text-3xl text-emerald-600/30 mb-3 block"></i>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                                    Pellentesque eu nibh eget mauris congue mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-gray-200/60 pt-4">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" src="./assets/image/person-1.jpg" alt="Robert Fox">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm">Robert Fox</h4>
+                                        <p class="text-gray-400 text-[10px] sm:text-xs">Customer</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-8 rounded-2xl bg-gray-50 border border-gray-100 flex flex-col justify-between">
+                            <div>
+                                <i class="fa-solid fa-quote-left text-2xl sm:text-3xl text-emerald-600/30 mb-3 block"></i>
+                                <p class="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
+                                    Pellentesque eu nibh eget mauris congue mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-gray-200/60 pt-4">
+                                <div class="flex items-center gap-3">
+                                    <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" src="./assets/image/person-1.jpg" alt="Robert Fox">
+                                    <div>
+                                        <h4 class="font-bold text-gray-900 text-xs sm:text-sm">Robert Fox</h4>
+                                        <p class="text-gray-400 text-[10px] sm:text-xs">Customer</p>
+                                    </div>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px] sm:text-xs">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Client Feedback Section End-->
+
+            <!-- Brand Logos Section Start-->
+            <section class="py-8 sm:py-12 bg-white border-t border-gray-100">
+                <div class="container mx-auto px-4 md:px-12">
+                    <div class="grid grid-cols-3 md:grid-cols-5 items-center justify-items-center gap-6 opacity-60">
+                        <img src="./assets/image/company (4).png" alt="Brand Logo" class="h-6 sm:h-8 object-contain">
+                        <img src="./assets/image/company (1).png" alt="Brand Logo" class="h-6 sm:h-8 object-contain">
+                        <img src="./assets/image/company (2).png" alt="Brand Logo" class="h-6 sm:h-8 object-contain">
+                        <img src="./assets/image/company (3).png" alt="Brand Logo" class="h-6 sm:h-8 object-contain">
+                        <img src="./assets/image/company (5).png" alt="Brand Logo" class="h-6 sm:h-8 object-contain col-span-3 md:col-span-1">
+                    </div>
+                </div>
+            </section>
+            <!-- Brand Logos Section End-->
+        </main>
+
+        <!-- Footer Section Start -->
+        <footer class="bg-gray-900 text-white">
+            <!-- Newsletter Bar -->
+            <div class="bg-gray-800 py-6 sm:py-8 border-b border-gray-700">
+                <div class="container mx-auto px-4 md:px-12 flex flex-col lg:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-3 sm:gap-4 text-center sm:text-left">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-emerald-600/20 text-emerald-500 flex items-center justify-center shrink-0 mx-auto sm:mx-0">
+                            <i class="fa-regular fa-envelope-open text-xl sm:text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-bold">Subscribe to our Newsletter</h3>
+                            <p class="text-gray-400 text-xs">Pellentesque eu nibh eget mauris congue mattis nec tellus.</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+                        <div class="flex items-center bg-gray-900 rounded-full p-1 border border-gray-700 w-full sm:w-80">
+                            <input class="bg-transparent px-3 sm:px-4 py-2 w-full text-xs sm:text-sm text-white placeholder-gray-500 outline-none" type="email" placeholder="Your email address">
+                            <button class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 sm:px-6 py-2 rounded-full font-medium text-xs sm:text-sm transition-all shrink-0">
+                                Subscribe
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <a href="#" aria-label="Facebook" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-emerald-600 transition-all">
+                                <i class="fa-brands fa-facebook-f text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-emerald-600 transition-all">
+                                <i class="fa-brands fa-twitter text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#" aria-label="Pinterest" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-emerald-600 transition-all">
+                                <i class="fa-brands fa-pinterest-p text-xs sm:text-sm"></i>
+                            </a>
+                            <a href="#" aria-label="Instagram" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gray-900 border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:bg-emerald-600 transition-all">
+                                <i class="fa-brands fa-instagram text-xs sm:text-sm"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="py-8 sm:py-12 border-b border-gray-800">
+                <div class="container mx-auto px-4 md:px-12 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
+                    <div class="col-span-2 lg:col-span-2">
+                        <img src="./assets/image/Logo.png" alt="Logo" class="h-7 sm:h-8 mb-3 brightness-200">
+                        <p class="text-gray-400 text-xs sm:text-sm max-w-sm mb-4 leading-relaxed">
+                            Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                            <a href="tel:2195550114" class="font-semibold text-white hover:text-emerald-500 transition-colors">(219) 555-0114</a>
+                            <span class="text-gray-600">or</span>
+                            <a href="mailto:Proxy@gmail.com" class="font-semibold text-white hover:text-emerald-500 transition-colors">Proxy@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-white text-sm sm:text-base mb-3 sm:mb-4">My Account</h4>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Order History</a></li>
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Shopping Cart</a></li>
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Wishlist</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-white text-sm sm:text-base mb-3 sm:mb-4">Helps</h4>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-400">
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Contact</a></li>
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Faqs</a></li>
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Terms & Conditions</a></li>
+                            <li><a href="#" class="hover:text-emerald-500 transition-colors">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-span-2 sm:col-span-1">
+                        <h4 class="font-semibold text-white text-sm sm:text-base mb-3 sm:mb-4">Download App</h4>
+                        <div class="flex sm:flex-col gap-2">
+                            <a href="#" class="flex items-center gap-2 bg-gray-800 border border-gray-700 p-2 rounded-xl transition-all w-1/2 sm:w-auto">
+                                <i class="fa-brands fa-apple text-xl text-white"></i>
+                                <div>
+                                    <p class="text-[8px] text-gray-400 uppercase">App Store</p>
+                                    <h5 class="text-xs font-semibold text-white">Download</h5>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center gap-2 bg-gray-800 border border-gray-700 p-2 rounded-xl transition-all w-1/2 sm:w-auto">
+                                <i class="fa-brands fa-google-play text-xl text-white"></i>
+                                <div>
+                                    <p class="text-[8px] text-gray-400 uppercase">Google Play</p>
+                                    <h5 class="text-xs font-semibold text-white">Download</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="py-6 text-center text-[11px] sm:text-xs text-gray-500">
+                <p>Ecobazar eCommerce © 2024. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+</body>
+
+</html>
